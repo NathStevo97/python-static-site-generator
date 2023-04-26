@@ -5,6 +5,13 @@ import shutil
 class Parser():
     extensions: List[str] = []
 
+    def validate_extension(self, extension):
+        return extension in self.extensions
+    
+    def read(self, path):
+        with open(path, "r") as file:
+            return file.read()
+
     def parse(self, path: Path, source: Path, dest: Path):
         raise NotImplementedError
     
